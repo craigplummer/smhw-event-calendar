@@ -1,6 +1,8 @@
 <h1>Events calendar</h1>
 
-<%= link_to 'Create event' %>
+<%= link_to 'Create event', '#', id: 'new_event_link' %>
+
+<%= render 'form' %>
 
 <div id="events_calendar"></div>
 

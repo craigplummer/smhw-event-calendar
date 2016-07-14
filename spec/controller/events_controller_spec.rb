@@ -24,4 +24,18 @@ RSpec.describe EventsController, type: :controller do
       end
     end
   end
+
+  describe 'POST create' do
+    it 'creates a new event with valid attributes' do
+      event = FactoryGirl.attributes_for(:event)
+      post :create, event: event
+      expect(assigns(:event).description).to eq(event[:description])
+    end
+
+    it 'returns a error for an event with invalid attributes' do
+      event = FactoryGirl.attributes_for(:event, start_date: nil)
+      post :create, event: event
+      expect(response).to have_http_status(422)
+    end
+  end
 end
