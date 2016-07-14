@@ -19,6 +19,7 @@ $(document).ready(function(){
   $('#new_event').on('ajax:success', function(event, data, status, xhr) {
     $('#event_form_errors').html('');
     $(this).trigger('reset');
+    $('#new_event').hide();
     $('#events_calendar').fullCalendar('renderEvent', data);
     $('#events_calendar').fullCalendar('gotoDate', data.start);
   });
