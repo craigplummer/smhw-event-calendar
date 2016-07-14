@@ -15,5 +15,11 @@ $(document).ready(function(){
       $('#event_form_errors').append('<li>' + value + '</li>');
     })
   });
+
+  $('#new_event').on('ajax:success', function(event, data, status, xhr) {
+    $('#event_form_errors').html('');
+    $(this).trigger('reset');
+    $('#events_calendar').fullCalendar('renderEvent', data);
+  });
 });
 
