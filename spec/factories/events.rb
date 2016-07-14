@@ -4,4 +4,9 @@ FactoryGirl.define do
     start_date { Date.today }
     end_date { Date.today + 1.day }
   end
+
+  factory :future_events, parent: :event do
+    start_date { Date.today + 8.days }
+    end_date { Date.today + 9.days }
+  end
 end
