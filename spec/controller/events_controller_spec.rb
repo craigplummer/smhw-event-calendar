@@ -11,7 +11,7 @@ RSpec.describe EventsController, type: :controller do
 
       it 'returns events for a future week' do
         events = FactoryGirl.create_list(:event, 3)
-        future_events = FactoryGirl.create_list(:future_events, 3)
+        future_events = FactoryGirl.create_list(:future_event, 3)
         get :index, format: :json, week: (Date.today + 8.days).to_s
         expect(assigns(:events)).to eq(future_events)
       end

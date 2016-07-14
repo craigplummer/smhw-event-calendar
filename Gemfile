@@ -26,6 +26,9 @@ gem 'momentjs-rails', '~> 2.11'
 # Date Validations for Active Modal
 gem 'date_validator', '~> 0.9.0'
 
+# Modify JSON serialization
+gem 'active_model_serializers', '~> 0.10.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
