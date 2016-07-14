@@ -20,6 +20,7 @@ $(document).ready(function(){
     $('#event_form_errors').html('');
     $(this).trigger('reset');
     $('#events_calendar').fullCalendar('renderEvent', data);
+    $('#events_calendar').fullCalendar('gotoDate', data.start);
   });
 });
 
